@@ -13,6 +13,8 @@ export default {
         'rock-light': 'hsl(349, 70%, 56%)',
         'paper-dark': 'hsl(230, 89%, 62%)',
         'paper-light': 'hsl(230, 89%, 65%)',
+        'scissors-light': 'hsl(40, 84%, 53%)',
+        'scissors-dark': 'hsl(39, 89%, 49%)',
       },
       fontFamily: {
         text: ['"Barlow Semi Condensed"'],

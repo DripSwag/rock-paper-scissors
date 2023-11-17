@@ -1,6 +1,7 @@
 interface Params {
   option: 'rock' | 'paper' | 'scissors'
   image: string
+  className?: string
 }
 
 const border = {
@@ -15,19 +16,19 @@ const backgroundColour = {
   scissors: 'bg-scissors-dark',
 }
 
-export default function OptionButton({ option, image }: Params) {
+export default function OptionButton({option, image, className}: Params) {
   return (
-    <button className='aspect-square w-32'>
+    <button className={`aspect-square w-32 absolute ${className ? className : ''}`}>
       <div
         className={`bg-white rounded-full ${border[option]} border-[16px] relative w-full h-full z-10`}
       >
         <img
           src={image}
-          className='relative left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 aspect-square w-1/3'
+          className='relative left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 aspect-square w-1/2'
         ></img>
       </div>
       <div
-        className={`w-full h-full absolute ${backgroundColour[option]} rounded-full top-1`}
+        className={`w-full h-full absolute ${backgroundColour[option]} rounded-full top-2`}
       ></div>
     </button>
   )
