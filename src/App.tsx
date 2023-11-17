@@ -1,3 +1,4 @@
+import OptionButton from './components/OptionButton.js'
 import Rock from './assets/icon-rock.svg'
 
 function App() {
@@ -16,13 +17,7 @@ function App() {
           </div>
         </section>
         <section className='relative z-10'>
-          <div className='bg-white rounded-full aspect-square w-32 border-rock-light relative circleShadow before:bg-rock-dark'>
-            <img
-              src={Rock}
-              className='relative left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 aspect-square w-1/3'
-            ></img>
-            <div className='w-full h-full bg-transparent rounded-full absolute top-0 border-[16px] border-rock-light'></div>
-          </div>
+          <OptionButton option='rock' image={Rock} />
         </section>
         <button className='border-2 border-border w-min py-2 px-10 rounded-xl'>
           RULES

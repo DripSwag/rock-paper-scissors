@@ -11,6 +11,8 @@ export default {
         'score-value': 'hsl(229, 25%, 31%)',
         'rock-dark': 'hsl(349, 71%, 52%)',
         'rock-light': 'hsl(349, 70%, 56%)',
+        'paper-dark': 'hsl(230, 89%, 62%)',
+        'paper-light': 'hsl(230, 89%, 65%)',
       },
       fontFamily: {
         text: ['"Barlow Semi Condensed"'],
