@@ -1,37 +1,19 @@
+import { Link } from 'react-router-dom'
+import Option from './Option.js'
+import { OptionType } from '../helper/OptionType.js'
+
 interface Params {
   option: 'rock' | 'paper' | 'scissors'
-  image: string
   className?: string
 }
 
-const border = {
-  rock: 'border-rock-light',
-  paper: 'border-paper-light',
-  scissors: 'border-scissors-light',
-}
-
-const backgroundColour = {
-  rock: 'bg-rock-dark',
-  paper: 'bg-paper-dark',
-  scissors: 'bg-scissors-dark',
-}
-
-export default function OptionButton({ option, image, className }: Params) {
+export default function OptionButton({ option, className }: Params) {
   return (
-    <button
+    <Link
+      to={`/result?selected=${option}`}
       className={`aspect-square w-32 absolute ${className ? className : ''}`}
     >
-      <div
-        className={`bg-white rounded-full ${border[option]} border-[16px] relative w-full h-full z-10 optionShadow`}
-      >
-        <img
-          src={image}
-          className='relative left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 aspect-square w-1/2 test'
-        ></img>
-      </div>
-      <div
-        className={`w-full h-full absolute ${backgroundColour[option]} rounded-full top-2`}
-      ></div>
-    </button>
+      <Option option={OptionType[option]} />
+    </Link>
   )
 }

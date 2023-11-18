@@ -1,10 +1,10 @@
-import ScoreBar from './components/ScoreBar.js'
-import TriangleSelection from './components/TriangleSelection.js'
-import RulesButton from './components/RulesButton.js'
-import RulesModal from './components/RulesModal.js'
+import ScoreBar from '../components/ScoreBar.js'
+import TriangleSelection from '../components/TriangleSelection.js'
+import RulesButton from '../components/RulesButton.js'
+import RulesModal from '../components/RulesModal.js'
 import { useCallback, useState } from 'react'
 
-function App() {
+export default function SelectionPage() {
   const [modalVisible, setModalVisible] = useState(false)
 
   const handleRulesClick = useCallback(
@@ -23,5 +23,3 @@ function App() {
     </main>
   )
 }
-
-export default App
