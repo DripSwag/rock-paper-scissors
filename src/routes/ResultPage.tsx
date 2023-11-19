@@ -1,9 +1,11 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { useAppDispatch } from '../app/hooks.js'
 import Result from '../components/Result.js'
 import RulesButton from '../components/RulesButton.js'
 import RulesModal from '../components/RulesModal.js'
 import ScoreBar from '../components/ScoreBar.js'
+import { decrement, increment } from '../features/score/scoreSlice.js'
 import { OptionType } from '../helper/OptionType.js'
 
 enum Decision {
@@ -14,6 +16,7 @@ enum Decision {
 
 export default function ResultPage() {
   const [modalVisible, setModalVisible] = useState(false)
+  const dispatch = useAppDispatch()
 
   const computerResult = Math.floor(Math.random() * 3)
   const searchParams = new URLSearchParams(window.location.search)
@@ -37,6 +40,20 @@ export default function ResultPage() {
     () => setModalVisible(!modalVisible),
     [modalVisible],
   )
+
+  let executed = false
+  useEffect(() => {
+    if (!executed) {
+      if (decision == Decision.win) {
+        dispatch(increment())
+      } else if (decision == Decision.lose) {
+        dispatch(decrement())
+      }
+    }
+    return () => {
+      executed = true
+    }
+  }, [])
 
   return (
     <main className='w-screen h-screen bg-gradient-to-b from-background-light to-background-dark text-text text-white font-text'>

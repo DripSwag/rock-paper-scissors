@@ -17,7 +17,7 @@ function OptionWrapper({
 
 export default function Result({ userChoice, computerChoice }: Params) {
   return (
-    <section className='w-full h-full relative flex'>
+    <section className='w-full h-full relative flex max-w-sm'>
       <div className='flex flex-col w-full justify-center items-center gap-4'>
         <OptionWrapper>
           <Option option={userChoice} />
