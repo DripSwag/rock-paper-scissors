@@ -11,7 +11,9 @@ export default function OptionButton({ option, className }: Params) {
   return (
     <Link
       to={`/result?selected=${option}`}
-      className={`aspect-square w-32 absolute ${className ? className : ''}`}
+      className={`aspect-square min-w-[8rem] w-[20vw] max-w-[11rem] absolute ${
+        className ? className : ''
+      }`}
     >
       <Option option={OptionType[option]} />
     </Link>
