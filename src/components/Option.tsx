@@ -5,6 +5,7 @@ import { OptionType } from '../helper/OptionType.js'
 
 interface Params {
   option: OptionType
+  winner?: boolean
 }
 
 const border = {
@@ -19,11 +20,11 @@ const backgroundColour = {
   2: 'bg-scissors-dark',
 }
 
-export default function Option({ option }: Params) {
+export default function Option({ option, winner }: Params) {
   return (
     <>
       <div
-        className={`bg-white rounded-full ${border[option]} border-[16px] relative w-full h-full z-10 optionShadow`}
+        className={`bg-white rounded-full ${border[option]} border-[16px] relative w-full h-full z-20 optionShadow`}
       >
         <img
           src={
@@ -37,8 +38,9 @@ export default function Option({ option }: Params) {
         ></img>
       </div>
       <div
-        className={`w-full h-full absolute ${backgroundColour[option]} rounded-full top-2`}
+        className={`w-full h-full absolute ${backgroundColour[option]} rounded-full top-2 z-10`}
       ></div>
+      {winner ? <div className={`winner`}></div> : <></>}
     </>
   )
 }

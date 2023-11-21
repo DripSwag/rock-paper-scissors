@@ -4,15 +4,28 @@
 @tailwind utilities;
 
 @layer components {
-  img {
-    image-rendering: crisp-edges;
-  }
-
-  .test {
-    image-rendering: crisp-edges;
-  }
-
   .optionShadow {
     box-shadow: rgba(0, 0, 0, 0.4) 5px 5px inset;
+  }
+
+  .winner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 200%;
+    aspect-ratio: 1 / 1;
+    transform: translateY(-25%) translateX(-25%);
+    background: radial-gradient(
+      circle at center,
+      #cfcfcf1c,
+      #cfcfcf1c 50%,
+      #cfcfcf14 50%,
+      #cfcfcf14 60%,
+      #cfcfcf0c 60%
+    );
+    border-radius: 100%;
+    z-index: 0;
   }
 }

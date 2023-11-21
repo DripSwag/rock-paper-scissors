@@ -4,7 +4,7 @@ export default function ScoreBar() {
   const value = useAppSelector(state => state.score.value)
 
   return (
-    <section className='border-border border-2 p-4 rounded-lg flex justify-between min-h-[8em] items-center w-full max-w-2xl'>
+    <section className='border-border border-2 p-4 rounded-lg flex justify-between min-h-[8em] items-center w-full max-w-2xl z-50'>
       <h1 className='leading-[0.75em] font-bold text-3xl'>
         ROCK<br></br>PAPER<br></br>SCISSORS
       </h1>
