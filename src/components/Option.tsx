@@ -34,6 +34,7 @@ export default function Option({ option, winner }: Params) {
               ? Paper
               : Scissors
           }
+          alt={option.toString()}
           className='relative left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 aspect-square w-1/2 test'
         ></img>
       </div>
