@@ -5,7 +5,36 @@
 
 @layer components {
   .optionShadow {
-    box-shadow: rgba(0, 0, 0, 0.4) 5px 5px inset;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2) inset;
+    width: 100%;
+    height: 100%;
+    border: solid 1rem transparent;
+    border-radius: 100%;
+    background-image: linear-gradient(white, white),
+      radial-gradient(circle at top, hsl(349, 70%, 56%), hsl(349, 71%, 52%));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .optionShadow {
+      border: solid 1.5em transparent;
+    }
+  }
+
+  .optionShadow.rock {
+    background-image: linear-gradient(white, white),
+      radial-gradient(circle at top, hsl(349, 70%, 56%), hsl(349, 71%, 52%));
+  }
+
+  .optionShadow.paper {
+    background-image: linear-gradient(white, white),
+      radial-gradient(circle at top, hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+  }
+
+  .optionShadow.scissors {
+    background-image: linear-gradient(white, white),
+      radial-gradient(circle at top, hsl(40, 84%, 53%), hsl(39, 89%, 49%));
   }
 
   .winner::after {
@@ -27,5 +56,12 @@
     );
     border-radius: 100%;
     z-index: 0;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .winner::after {
+      width: 300%;
+      transform: translateY(-33%) translateX(-33%);
+    }
   }
 }

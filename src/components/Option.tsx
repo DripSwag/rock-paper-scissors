@@ -9,22 +9,22 @@ interface Params {
 }
 
 const border = {
-  0: 'border-rock-light',
-  1: 'border-paper-light',
-  2: 'border-scissors-light',
+  0: 'rock',
+  1: 'paper',
+  2: 'scissors',
 }
 
 const backgroundColour = {
-  0: 'bg-rock-dark',
-  1: 'bg-paper-dark',
-  2: 'bg-scissors-dark',
+  0: 'bg-rock-shadow',
+  1: 'bg-paper-shadow',
+  2: 'bg-scissors-shadow',
 }
 
 export default function Option({ option, winner }: Params) {
   return (
     <>
       <div
-        className={`bg-white rounded-full ${border[option]} border-[16px] relative w-full h-full z-20 optionShadow`}
+        className={`bg-white rounded-full relative w-full h-full z-20 optionShadow ${border[option]}`}
       >
         <img
           src={
